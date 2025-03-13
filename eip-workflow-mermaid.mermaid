@@ -1,0 +1,50 @@
+flowchart TD
+    %% Node definitions with styling
+    classDef startNode fill:#10B981,color:white,stroke:none
+    classDef endNode fill:#F97316,color:white,stroke:none
+    classDef extractor fill:#EC4899,color:white,stroke:none
+    classDef tool fill:#3B82F6,color:white,stroke:none
+    classDef llm fill:#8B5CF6,color:white,stroke:none
+    
+    %% Start node
+    Start([User inputs EIP]) --> UrlExtractor
+    
+    %% URL Extraction
+    subgraph "Step 1: EIP Retrieval"
+        UrlExtractor["Extract EIP URL\n(Parameter Extractor)"] --> FetchEIP["Fetch EIP Content\n(Web Tool)"]
+    end
+    
+    %% Analysis processes
+    FetchEIP --> Analysis
+    
+    subgraph "Step 2: Multi-Dimensional Analysis"
+        Analysis{{"Analysis Distribution"}}
+        Analysis --> NoveltyScore["Novelty Score\n(GPT-4o, 1-10)"]
+        Analysis --> TechScore["Technical Difficulty\n(Gemini, 100-400)"]
+        Analysis --> PolygonScore["Polygon Impact\n(Gemini, 1-10)"]
+        Analysis --> EthereumScore["Ethereum Impact\n(Claude, 1-10)"]
+    end
+    
+    %% Community engagement analysis
+    FetchEIP --> DiscussionExtractor
+    
+    subgraph "Step 3: Community Engagement Analysis"
+        DiscussionExtractor["Extract Discussion Link\n(Parameter Extractor)"] --> FetchDiscussion["Fetch Discussion\n(Web Tool)"]
+        FetchDiscussion --> EngagementScore["Engagement Score\n(Claude, 1-10)"]
+    end
+    
+    %% Summary generation
+    NoveltyScore --> Summary["Generate Summary\n(Claude)"]
+    TechScore --> Summary
+    PolygonScore --> Summary
+    EthereumScore --> Summary
+    EngagementScore --> Summary
+    
+    Summary --> EndNode([Final EIP Report])
+    
+    %% Apply styling
+    class Start startNode
+    class EndNode endNode
+    class UrlExtractor,DiscussionExtractor extractor
+    class FetchEIP,FetchDiscussion tool
+    class NoveltyScore,TechScore,PolygonScore,EthereumScore,EngagementScore,Summary llm
