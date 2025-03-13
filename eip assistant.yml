@@ -1,0 +1,932 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: eip assistant
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables:
+  - description: ''
+    id: 2d0f1195-815b-4ebd-9f31-04485f2b0b14
+    name: eipnumber
+    value: 0
+    value_type: number
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: tool
+      id: 1735878996825-source-1735879782672-target
+      selected: false
+      source: '1735878996825'
+      sourceHandle: source
+      target: '1735879782672'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 1735879782672-source-17358802294090-target
+      selected: false
+      source: '1735879782672'
+      sourceHandle: source
+      target: '17358802294090'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: tool
+      id: 1735878996825-source-17358805096950-target
+      selected: false
+      source: '1735878996825'
+      sourceHandle: source
+      target: '17358805096950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: parameter-extractor
+      id: 17358805096950-source-1735881230479-target
+      selected: false
+      source: '17358805096950'
+      sourceHandle: source
+      target: '1735881230479'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: tool
+      id: 1735881230479-source-17358814625630-target
+      selected: false
+      source: '1735881230479'
+      sourceHandle: source
+      target: '17358814625630'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 17358814625630-source-17358816700350-target
+      selected: false
+      source: '17358814625630'
+      sourceHandle: source
+      target: '17358816700350'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 1735879782672-source-17358818982210-target
+      selected: false
+      source: '1735879782672'
+      sourceHandle: source
+      target: '17358818982210'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: end
+      id: 1735882608758-source-1735882362901-target
+      selected: false
+      source: '1735882608758'
+      sourceHandle: source
+      target: '1735882362901'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1735879403604-source-1735882608758-target
+      selected: false
+      source: '1735879403604'
+      sourceHandle: source
+      target: '1735882608758'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17358816700350-source-1735882608758-target
+      selected: false
+      source: '17358816700350'
+      sourceHandle: source
+      target: '1735882608758'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17358818982210-source-1735879403604-target
+      selected: false
+      source: '17358818982210'
+      sourceHandle: source
+      target: '1735879403604'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17358802294090-source-17358802904080-target
+      selected: false
+      source: '17358802294090'
+      sourceHandle: source
+      target: '17358802904080'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17358802904080-source-1735882608758-target
+      selected: false
+      source: '17358802904080'
+      sourceHandle: source
+      target: '1735882608758'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: parameter-extractor
+      id: 1735878581782-source-1735878996825-target
+      source: '1735878581782'
+      sourceHandle: source
+      target: '1735878996825'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: eip_txt
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: EIP_TEXT
+      height: 89
+      id: '1735878581782'
+      position:
+        x: -121.31978061069867
+        y: 755.7498873110045
+      positionAbsolute:
+        x: -121.31978061069867
+        y: 755.7498873110045
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        instruction: Extract the EIP URL from the context.  If only provided with
+          the EIP and no url, then construct a new url based on `https://eips.ethereum.org/EIPS/eip-[eip_number]`
+          as the url
+        model:
+          completion_params:
+            temperature: 0.2
+            top_p: 0.2
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: extract the url
+          name: link
+          required: true
+          type: string
+        query:
+        - '1735878581782'
+        - EIP_TEXT
+        reasoning_mode: prompt
+        selected: false
+        title: Parameter Extractor
+        type: parameter-extractor
+        variables: []
+      height: 97
+      id: '1735878996825'
+      position:
+        x: 472.83715733097597
+        y: 761.9160681941357
+      positionAbsolute:
+        x: 472.83715733097597
+        y: 761.9160681941357
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: gemini-1.5-pro
+          provider: google
+        prompt_template:
+        - id: 9ca45869-8a1b-4a36-9ef2-5e3f1b1b8055
+          role: system
+          text: ''
+        - id: 314bde09-5cbd-4ec2-859c-749fb387cfa5
+          role: user
+          text: 'You are tasked with scoring the technical difficulty level of an
+            Ethereum Improvement Proposal (EIP) on a scale of 100-400. Here is the
+            text of the EIP:
+
+
+            <eip>
+
+            {{#1735879782672.text#}}
+
+            </eip>
+
+
+            The scoring scale is as follows:
+
+            - 100-200: Low difficulty
+
+            - 201-300: Medium difficulty
+
+            - 301-400: High difficulty
+
+
+            Carefully read and analyze the EIP. Consider the following aspects when
+            determining the technical difficulty:
+
+
+            1. Complexity of the proposal
+
+            2. Technical knowledge required to implement it
+
+            3. Potential impact on existing Ethereum systems
+
+            4. Scope of changes required
+
+            5. Interdependencies with other Ethereum components
+
+
+            After your analysis, provide a brief justification for your score, explaining
+            your reasoning based on the above criteria. Then, give your final score
+            as a number between 100 and 400.
+
+
+            Present your response in the following format:
+
+
+            <analysis>
+
+            [Your justification for the score, discussing the relevant aspects of
+            technical difficulty]
+
+            </analysis>
+
+
+            <score>
+
+            [Your final score as a number between 100 and 400]
+
+            </score>'
+        selected: false
+        title: Tech Difficulty Score
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '1735879403604'
+      position:
+        x: 1563.9902568330917
+        y: 399.65676224711444
+      positionAbsolute:
+        x: 1563.9902568330917
+        y: 399.65676224711444
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        provider_id: jina
+        provider_name: jina
+        provider_type: builtin
+        selected: false
+        title: Fetch EIP
+        tool_configurations:
+          gather_all_images_at_the_end: 0
+          gather_all_links_at_the_end: 0
+          image_caption: 0
+          max_retries: 3
+          no_cache: 0
+          proxy_server: null
+          summary: 0
+          target_selector: null
+          wait_for_selector: null
+        tool_label: Fetch Single Page
+        tool_name: jina_reader
+        tool_parameters:
+          request_params:
+            type: mixed
+            value: ''
+          url:
+            type: mixed
+            value: '{{#1735878996825.link#}}'
+        type: tool
+      height: 297
+      id: '1735879782672'
+      position:
+        x: 847.5762411186884
+        y: 496.6718804055112
+      positionAbsolute:
+        x: 847.5762411186884
+        y: 496.6718804055112
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            max_tokens: 4096
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: gpt-4o
+          provider: openai
+        prompt_template:
+        - id: 9ca45869-8a1b-4a36-9ef2-5e3f1b1b8055
+          role: system
+          text: ''
+        - id: 314bde09-5cbd-4ec2-859c-749fb387cfa5
+          role: user
+          text: 'You will be analyzing an Ethereum Improvement Proposal (EIP) for
+            its novelty. The full text of the EIP is provided below:
+
+
+            <eip>
+
+            {{#1735879782672.text#}}
+
+            </eip>
+
+
+            Your task is to score how novel this EIP is on a scale of 1-10, with 1
+            being not novel at all and 10 being extremely novel. Consider the following
+            criteria when evaluating novelty:
+
+
+            1. Does the proposal introduce new concepts to the Ethereum ecosystem?
+
+            2. Does it solve existing problems in innovative ways?
+
+            3. Does it build upon existing ideas in a unique or creative manner?
+
+
+            Analyze the EIP carefully, considering its technical aspects, potential
+            impact, and how it relates to existing Ethereum standards or practices.
+
+
+            After your analysis, provide a brief justification for your score. Explain
+            your reasoning, highlighting specific aspects of the EIP that influenced
+            your decision. Write your justification within <justification> tags.
+
+
+            Finally, give your novelty score as a single number between 1 and 10 within
+            <score> tags.
+
+
+            Remember to provide your justification before the score.'
+        selected: false
+        title: Novelty Score
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17358802294090'
+      position:
+        x: 1179.1764507182895
+        y: 639.3537040490285
+      positionAbsolute:
+        x: 1179.1764507182895
+        y: 639.3537040490285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: claude-3-5-sonnet-20240620
+          provider: anthropic
+        prompt_template:
+        - id: 9ca45869-8a1b-4a36-9ef2-5e3f1b1b8055
+          role: system
+          text: ''
+        - id: 314bde09-5cbd-4ec2-859c-749fb387cfa5
+          role: user
+          text: 'You will be evaluating the impact of an Ethereum Improvement Proposal
+            (EIP) on the Ethereum ecosystem. Your task is to score the EIP''s potential
+            impact on a scale of 1-10, with 1 being minimal impact and 10 being highly
+            impactful.
+
+
+            Here is the description of the EIP:
+
+
+            <eip_description>
+
+            {{#1735879782672.text#}}
+
+            </eip_description>
+
+
+            To score the EIP, consider the following criteria:
+
+            1. Impact on developers: How much will this EIP affect the way developers
+            create and maintain Ethereum-based applications?
+
+            2. Impact on users: How will this EIP change the user experience or capabilities
+            for Ethereum users?
+
+            3. Impact on the overall Ethereum network: What effects will this EIP
+            have on the network''s performance, security, or scalability?
+
+
+            Analyze the EIP carefully, considering its potential effects on each of
+            these areas. Think about both short-term and long-term implications.
+
+
+            After your analysis, provide a brief justification for your score. Explain
+            your reasoning, highlighting the most significant factors that influenced
+            your decision. Write your justification inside <justification> tags.
+
+
+            Finally, give your score as a single number between 1 and 10 inside <score>
+            tags.
+
+
+            Remember, 1 indicates minimal impact, while 10 indicates a highly impactful
+            proposal that could significantly change the Ethereum ecosystem.'
+        selected: false
+        title: Ethereum Impact Score
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: false
+      height: 97
+      id: '17358802904080'
+      position:
+        x: 1544.1062607724484
+        y: 659.9876899073134
+      positionAbsolute:
+        x: 1544.1062607724484
+        y: 659.9876899073134
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        provider_id: jina
+        provider_name: jina
+        provider_type: builtin
+        selected: false
+        title: Fetch EIP (1)
+        tool_configurations:
+          gather_all_images_at_the_end: 0
+          gather_all_links_at_the_end: 0
+          image_caption: 0
+          max_retries: 3
+          no_cache: 0
+          proxy_server: null
+          summary: 0
+          target_selector: .css-47t1jm
+          wait_for_selector: null
+        tool_label: Fetch Single Page
+        tool_name: jina_reader
+        tool_parameters:
+          request_params:
+            type: mixed
+            value: ''
+          url:
+            type: mixed
+            value: '{{#1735878996825.link#}}'
+        type: tool
+      height: 297
+      id: '17358805096950'
+      position:
+        x: 901.0073479021235
+        y: 1101.2917939584033
+      positionAbsolute:
+        x: 901.0073479021235
+        y: 1101.2917939584033
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        instruction: only return only 1 valid url
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: gemini-1.5-flash-latest
+          provider: google
+        parameters:
+        - description: content with url
+          name: content
+          required: false
+          type: string
+        query:
+        - '17358805096950'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: Link to Discussion
+        type: parameter-extractor
+        variables: []
+      height: 97
+      id: '1735881230479'
+      position:
+        x: 1179.1764507182895
+        y: 955.0859405713204
+      positionAbsolute:
+        x: 1179.1764507182895
+        y: 955.0859405713204
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        provider_id: jina
+        provider_name: jina
+        provider_type: builtin
+        selected: false
+        title: Fetch Discussion
+        tool_configurations:
+          gather_all_images_at_the_end: 0
+          gather_all_links_at_the_end: 0
+          image_caption: 0
+          max_retries: 3
+          no_cache: 0
+          proxy_server: null
+          summary: 0
+          target_selector: null
+          wait_for_selector: null
+        tool_label: Fetch Single Page
+        tool_name: jina_reader
+        tool_parameters:
+          request_params:
+            type: mixed
+            value: ''
+          url:
+            type: mixed
+            value: '{{#1735881230479.content#}}'
+        type: tool
+      height: 297
+      id: '17358814625630'
+      position:
+        x: 1469.629607599484
+        y: 955.0859405713204
+      positionAbsolute:
+        x: 1469.629607599484
+        y: 955.0859405713204
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: claude-3-5-sonnet-20240620
+          provider: anthropic
+        prompt_template:
+        - edition_type: basic
+          id: d8ef5439-ca7d-4ab3-b28c-133573ffd543
+          role: system
+          text: You are a helpful AI assistant.
+        - id: 6ec28a6a-be1d-4012-b089-b3d13bba0822
+          role: user
+          text: "You are tasked with scoring the engagement level of an Ethereum Improvement\
+            \ Proposal (EIP) on a scale of 1-10, where 1 represents inactive engagement\
+            \ and 10 represents highly active engagement. Your assessment should consider\
+            \ the engagement of developers, users, and the overall Ethereum network.\n\
+            \nHere are the details of the EIP you need to evaluate:\n\n<eip_details>\n\
+            {{#17358814625630.text#}}\n</eip_details>\n\nTo score the engagement level:\n\
+            \n1. Analyze the following factors:\n   - Developer activity (discussions,\
+            \ code contributions, updates)\n   - User interest and feedback\n   -\
+            \ Implementation progress\n   - Community discussions and debates\n\n\
+            2. Consider the overall timeline and progression of the EIP.\n\n3. Compare\
+            \ the engagement level to other typical EIPs, using your knowledge of\
+            \ the Ethereum ecosystem.\n\nProvide a brief justification for your score,\
+            \ explaining the key factors that influenced your decision. Your justification\
+            \ should be concise but informative, highlighting the most significant\
+            \ aspects of engagement.\n\nAfter providing your justification, give a\
+            \ final score between 1 and 10.\n\nFormat your response as follows:\n\n\
+            <engagement_analysis>\n[Your justification for the score here]\n\nScore:\
+            \ [Your numerical score between 1 and 10]\n</engagement_analysis>"
+        selected: false
+        title: Engagement Score
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: false
+      height: 97
+      id: '17358816700350'
+      position:
+        x: 1761.6596808173267
+        y: 955.0859405713204
+      positionAbsolute:
+        x: 1761.6596808173267
+        y: 955.0859405713204
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: gemini-1.5-pro-latest
+          provider: google
+        prompt_template:
+        - id: 9ca45869-8a1b-4a36-9ef2-5e3f1b1b8055
+          role: system
+          text: ''
+        - id: 314bde09-5cbd-4ec2-859c-749fb387cfa5
+          role: user
+          text: 'You will be evaluating the impact of a Polygon Improvement Proposal
+            (EIP) on the Polygon network. Here is the EIP to analyze:
+
+
+            <eip>
+
+            {{#1735879782672.text#}}
+
+            </eip>
+
+
+            Your task is to score the impact of this EIP on a scale of 1-10, with
+            1 being no impact and 10 being highly impactful. Consider the impact on
+            three key areas:
+
+            1. Developers
+
+            2. Users
+
+            3. The overall Polygon network
+
+
+            Analyze the EIP carefully, considering how it might affect each of these
+            groups. Think about potential benefits, drawbacks, and long-term implications.
+
+
+            After your analysis, provide a brief justification for your score. This
+            justification should summarize the key points of your analysis and explain
+            why you chose the score you did. Write your justification inside <justification>
+            tags.
+
+
+            Finally, give your score as a single number between 1 and 10 inside <score>
+            tags.
+
+
+            Remember to provide your justification before the score.'
+        selected: true
+        title: AggLayer Impact Score
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: true
+      height: 97
+      id: '17358818982210'
+      position:
+        x: 1179.1764507182895
+        y: 399.65676224711444
+      positionAbsolute:
+        x: 1179.1764507182895
+        y: 399.65676224711444
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1735882608758'
+          - text
+          variable: text
+        selected: false
+        title: End
+        type: end
+      height: 89
+      id: '1735882362901'
+      position:
+        x: 2331.6555335390544
+        y: 704.6555664987303
+      positionAbsolute:
+        x: 2331.6555335390544
+        y: 704.6555664987303
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.5
+            presence_penalty: 0.5
+            temperature: 0.2
+            top_p: 0.75
+          mode: chat
+          name: claude-3-5-sonnet-20240620
+          provider: anthropic
+        prompt_template:
+        - id: 9f8581c6-f858-4048-8e6d-c33ea62baae0
+          role: system
+          text: ''
+        - id: aaa2bd63-68c9-42f3-b1ea-c4c7504bf1c5
+          role: user
+          text: "You are tasked with analyzing Ethereum Improvement Proposal (EIP)\
+            \ research data and creating a comprehensive report. The research data\
+            \ will be provided in the following format:\n\n<eip_research_data>\n1.\
+            \ Engagement with the EIP: {{#17358816700350.text#}}\n2. Novelty: {{#17358802294090.text#}}\n\
+            3. Technical Difficulty: {{#1735879403604.text#}}\n4. Polygon Agglayer\
+            \ Impact: {{#17358818982210.text#}}\n5. Ethereum Impact{{#17358802904080.text#}}\n\
+            </eip_research_data>\n\nYour task is to analyze this data and create a\
+            \ report that covers the following aspects:\n\n1. Engagement with the\
+            \ EIP\n2. Novelty\n3. Technical Difficulty\n4. Polygon Agglayer Impact\n\
+            5. Ethereum Impact\n\nFor each aspect, provide a detailed analysis based\
+            \ on the information given in the research data. Consider the following\
+            \ guidelines for each aspect:\n\n1. Technical Difficulty: Assess the complexity\
+            \ of implementing the EIP, considering factors such as code changes, testing\
+            \ requirements, and potential challenges.\n\n2. Novelty: Evaluate how\
+            \ innovative the proposal is within the Ethereum ecosystem. Consider whether\
+            \ it introduces new concepts or builds upon existing ideas.\n\n3. Ethereum\
+            \ Impact: Analyze the potential effects of the EIP on the Ethereum network,\
+            \ including performance improvements, security enhancements, or new functionalities.\n\
+            \n4. Polygon Agglayer Impact: Examine how the EIP might affect the Polygon\
+            \ network as an Ethereum scaling solution. Consider any potential benefits\
+            \ or challenges for Polygon.\n\n5. Engagement with the EIP: Review the\
+            \ level of community involvement, discussions, and support for the proposal.\n\
+            \nBegin your report with a TLDR (Too Long; Didn't Read) summary that captures\
+            \ the key points of your analysis in a concise manner. Following the TLDR,\
+            \ create a summary table that provides a quick overview of your findings\
+            \ for each aspect.\n\nAfter the TLDR and summary table, provide a detailed\
+            \ analysis for each aspect, using separate sections for clarity. Use your\
+            \ expertise to interpret the data and draw meaningful conclusions.\n\n\
+            Format your output in markdown as follows:\n# EIP Analysis Report\n\n\
+            ## TLDR\n[Insert TLDR summary here]\n\n## Summary Table\n[Insert summary\
+            \ table here]\n\n## Detailed Analysis\n\n### Technical Difficulty\n[Insert\
+            \ analysis of technical difficulty]\n\n### Novelty\n[Insert analysis of\
+            \ novelty]\n\n### Ethereum Impact\n[Insert analysis of Ethereum impact]\n\
+            \n### Polygon Agglayer Impact \n[Insert analysis of Polygon Agglayer impact]\n\
+            \n### Engagement\n[Insert analysis of engagement with the EIP]\n\nEnsure\
+            \ that your analysis is thorough, objective, and based solely on the provided\
+            \ research data. Do not include any external information or personal opinions\
+            \ not provided by the given data."
+        selected: false
+        title: Generate Summary
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: false
+      height: 97
+      id: '1735882608758'
+      position:
+        x: 2023.020600433219
+        y: 704.6555664987303
+      positionAbsolute:
+        x: 2023.020600433219
+        y: 704.6555664987303
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: -422.1253538837077
+      y: -281.6743230213806
+      zoom: 0.8330932581226744
